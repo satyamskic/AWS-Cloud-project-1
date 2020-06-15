@@ -1,0 +1,572 @@
+
+C:\Users\SATYAM KUMAR\Desktop\Terra>terraform validate
+Success! The configuration is valid.
+
+
+C:\Users\SATYAM KUMAR\Desktop\Terra>terraform apply -auto-approve
+tls_private_key.key: Creating...
+tls_private_key.key: Creation complete after 1s [id=792034504ed5b1fe7d545a8e91abbe9bdb21d20b]
+module.key_pair.aws_key_pair.this[0]: Creating...
+aws_ebs_volume.EbsVol: Creating...
+aws_security_group.mysg: Creating...
+module.key_pair.aws_key_pair.this[0]: Creation complete after 1s [id=key123]
+aws_security_group.mysg: Creation complete after 5s [id=sg-037d029095cd790d6]
+aws_instance.TeraOS: Creating...
+aws_ebs_volume.EbsVol: Still creating... [10s elapsed]
+aws_instance.TeraOS: Still creating... [10s elapsed]
+aws_ebs_volume.EbsVol: Creation complete after 17s [id=vol-0f79a85e912888ca8]
+aws_instance.TeraOS: Still creating... [21s elapsed]
+aws_instance.TeraOS: Still creating... [31s elapsed]
+aws_instance.TeraOS: Provisioning with 'remote-exec'...
+aws_instance.TeraOS (remote-exec): Connecting to remote host via SSH...
+aws_instance.TeraOS (remote-exec):   Host: 13.233.61.75
+aws_instance.TeraOS (remote-exec):   User: ec2-user
+aws_instance.TeraOS (remote-exec):   Password: false
+aws_instance.TeraOS (remote-exec):   Private key: true
+aws_instance.TeraOS (remote-exec):   Certificate: false
+aws_instance.TeraOS (remote-exec):   SSH Agent: false
+aws_instance.TeraOS (remote-exec):   Checking Host Key: false
+aws_instance.TeraOS (remote-exec): Connected!
+aws_instance.TeraOS (remote-exec): Loaded plugins: extras_suggestions,
+aws_instance.TeraOS (remote-exec):               : langpacks, priorities,
+aws_instance.TeraOS (remote-exec):               : update-motd
+aws_instance.TeraOS (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 3391.
+aws_instance.TeraOS (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.TeraOS (remote-exec):   The other application is: yum
+aws_instance.TeraOS (remote-exec):     Memory :  56 M RSS (347 MB VSZ)
+aws_instance.TeraOS (remote-exec):     Started: Sun Jun 14 08:25:56 2020 - 00:03 ago
+aws_instance.TeraOS (remote-exec):     State  : Running, pid: 3391
+aws_instance.TeraOS (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+aws_instance.TeraOS (remote-exec):   The other application is: yum
+aws_instance.TeraOS (remote-exec):     Memory : 102 M RSS (392 MB VSZ)
+aws_instance.TeraOS (remote-exec):     Started: Sun Jun 14 08:25:56 2020 - 00:05 ago
+aws_instance.TeraOS (remote-exec):     State  : Running, pid: 3391
+aws_instance.TeraOS (remote-exec): Resolving Dependencies
+aws_instance.TeraOS (remote-exec): --> Running transaction check
+aws_instance.TeraOS (remote-exec): ---> Package git.x86_64 0:2.23.3-1.amzn2.0.1 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: perl-Git = 2.23.3-1.amzn2.0.1 for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: git-core-doc = 2.23.3-1.amzn2.0.1 for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: git-core = 2.23.3-1.amzn2.0.1 for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: emacs-filesystem >= 25.3 for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: perl(Term::ReadKey) for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: perl(Git::I18N) for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: perl(Git) for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: libsecret-1.so.0()(64bit) for package: git-2.23.3-1.amzn2.0.1.x86_64
+aws_instance.TeraOS (remote-exec): ---> Package httpd.x86_64 0:2.4.43-1.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: httpd-tools = 2.4.43-1.amzn2 for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: httpd-filesystem = 2.4.43-1.amzn2 for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: system-logos-httpd for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: mod_http2 for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: httpd-filesystem for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: /etc/mime.types for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.43-1.amzn2.x86_64
+aws_instance.TeraOS (remote-exec): ---> Package php.x86_64 0:5.4.16-46.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: php-cli(x86-64) = 5.4.16-46.amzn2.0.2 for package: php-5.4.16-46.amzn2.0.2.x86_64
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: php-common(x86-64) = 5.4.16-46.amzn2.0.2 for package: php-5.4.16-46.amzn2.0.2.x86_64
+aws_instance.TeraOS (remote-exec): --> Running transaction check
+aws_instance.TeraOS (remote-exec): ---> Package apr.x86_64 0:1.6.3-5.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package apr-util.x86_64 0:1.6.1-5.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: apr-util-bdb(x86-64) = 1.6.1-5.amzn2.0.2 for package: apr-util-1.6.1-5.amzn2.0.2.x86_64
+aws_instance.TeraOS (remote-exec): ---> Package emacs-filesystem.noarch 1:25.3-3.amzn2.0.1 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package generic-logos-httpd.noarch 0:18.0.0-4.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package git-core.x86_64 0:2.23.3-1.amzn2.0.1 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package git-core-doc.noarch 0:2.23.3-1.amzn2.0.1 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package httpd-filesystem.noarch 0:2.4.43-1.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package httpd-tools.x86_64 0:2.4.43-1.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package libsecret.x86_64 0:0.18.5-2.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package mailcap.noarch 0:2.1.41-2.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package mod_http2.x86_64 0:1.15.3-2.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package perl-Git.noarch 0:2.23.3-1.amzn2.0.1 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: perl(Error) for package: perl-Git-2.23.3-1.amzn2.0.1.noarch
+aws_instance.TeraOS (remote-exec): ---> Package perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package php-cli.x86_64 0:5.4.16-46.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package php-common.x86_64 0:5.4.16-46.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): --> Processing Dependency: libzip.so.2()(64bit) for package: php-common-5.4.16-46.amzn2.0.2.x86_64
+aws_instance.TeraOS (remote-exec): --> Running transaction check
+aws_instance.TeraOS (remote-exec): ---> Package apr-util-bdb.x86_64 0:1.6.1-5.amzn2.0.2 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package libzip010-compat.x86_64 0:0.10.1-9.amzn2.0.5 will be installed
+aws_instance.TeraOS (remote-exec): ---> Package perl-Error.noarch 1:0.17020-2.amzn2 will be installed
+aws_instance.TeraOS (remote-exec): --> Finished Dependency Resolution
+
+aws_instance.TeraOS (remote-exec): Dependencies Resolved
+
+aws_instance.TeraOS (remote-exec): ========================================
+aws_instance.TeraOS (remote-exec):  Package      Arch   Version
+aws_instance.TeraOS (remote-exec):                        Repository  Size
+aws_instance.TeraOS (remote-exec): ========================================
+aws_instance.TeraOS (remote-exec): Installing:
+aws_instance.TeraOS (remote-exec):  git          x86_64 2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):                        amzn2-core 135 k
+aws_instance.TeraOS (remote-exec):  httpd        x86_64 2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 1.3 M
+aws_instance.TeraOS (remote-exec):  php          x86_64 5.4.16-46.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 1.4 M
+aws_instance.TeraOS (remote-exec): Installing for dependencies:
+aws_instance.TeraOS (remote-exec):  apr          x86_64 1.6.3-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 118 k
+aws_instance.TeraOS (remote-exec):  apr-util     x86_64 1.6.1-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  99 k
+aws_instance.TeraOS (remote-exec):  apr-util-bdb x86_64 1.6.1-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  19 k
+aws_instance.TeraOS (remote-exec):  emacs-filesystem
+aws_instance.TeraOS (remote-exec):               noarch 1:25.3-3.amzn2.0.1
+aws_instance.TeraOS (remote-exec):                        amzn2-core  64 k
+aws_instance.TeraOS (remote-exec):  generic-logos-httpd
+aws_instance.TeraOS (remote-exec):               noarch 18.0.0-4.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  19 k
+aws_instance.TeraOS (remote-exec):  git-core     x86_64 2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):                        amzn2-core 5.0 M
+aws_instance.TeraOS (remote-exec):  git-core-doc noarch 2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):                        amzn2-core 2.4 M
+aws_instance.TeraOS (remote-exec):  httpd-filesystem
+aws_instance.TeraOS (remote-exec):               noarch 2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  23 k
+aws_instance.TeraOS (remote-exec):  httpd-tools  x86_64 2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  87 k
+aws_instance.TeraOS (remote-exec):  libsecret    x86_64 0.18.5-2.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 153 k
+aws_instance.TeraOS (remote-exec):  libzip010-compat
+aws_instance.TeraOS (remote-exec):               x86_64 0.10.1-9.amzn2.0.5
+aws_instance.TeraOS (remote-exec):                        amzn2-core  30 k
+aws_instance.TeraOS (remote-exec):  mailcap      noarch 2.1.41-2.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  31 k
+aws_instance.TeraOS (remote-exec):  mod_http2    x86_64 1.15.3-2.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 146 k
+aws_instance.TeraOS (remote-exec):  perl-Error   noarch 1:0.17020-2.amzn2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  32 k
+aws_instance.TeraOS (remote-exec):  perl-Git     noarch 2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):                        amzn2-core  47 k
+aws_instance.TeraOS (remote-exec):  perl-TermReadKey
+aws_instance.TeraOS (remote-exec):               x86_64 2.30-20.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core  31 k
+aws_instance.TeraOS (remote-exec):  php-cli      x86_64 5.4.16-46.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 2.8 M
+aws_instance.TeraOS (remote-exec):  php-common   x86_64 5.4.16-46.amzn2.0.2
+aws_instance.TeraOS (remote-exec):                        amzn2-core 563 k
+
+aws_instance.TeraOS (remote-exec): Transaction Summary
+aws_instance.TeraOS (remote-exec): ========================================
+aws_instance.TeraOS (remote-exec): Install  3 Packages (+18 Dependent packages)
+
+aws_instance.TeraOS (remote-exec): Total download size: 14 M
+aws_instance.TeraOS (remote-exec): Installed size: 63 M
+aws_instance.TeraOS (remote-exec): Downloading packages:
+aws_instance.TeraOS (remote-exec): (1/21): apr-1.6.3- | 118 kB   00:00
+aws_instance.TeraOS (remote-exec): (2/21): apr-util-1 |  99 kB   00:00
+aws_instance.TeraOS (remote-exec): (3/21): apr-util-b |  19 kB   00:00
+aws_instance.TeraOS (remote-exec): (4/21): emacs-file |  64 kB   00:00
+aws_instance.TeraOS (remote-exec): (5/21): generic-lo |  19 kB   00:00
+aws_instance.TeraOS (remote-exec): (6/21): git-2.23.3 | 135 kB   00:00
+aws_instance.TeraOS (remote-exec): (7/21): git-core-d | 2.4 MB   00:00
+aws_instance.TeraOS (remote-exec): (8/21): git-core-2 | 5.0 MB   00:00
+aws_instance.TeraOS (remote-exec): (9/21): httpd-2.4. | 1.3 MB   00:00
+aws_instance.TeraOS (remote-exec): (10/21): httpd-fil |  23 kB   00:00
+aws_instance.TeraOS (remote-exec): (11/21): httpd-too |  87 kB   00:00
+aws_instance.TeraOS (remote-exec): (12/21): libsecret | 153 kB   00:00
+aws_instance.TeraOS (remote-exec): (13/21): libzip010 |  30 kB   00:00
+aws_instance.TeraOS (remote-exec): (14/21): mailcap-2 |  31 kB   00:00
+aws_instance.TeraOS (remote-exec): (15/21): perl-Erro |  32 kB   00:00
+aws_instance.TeraOS (remote-exec): (16/21): mod_http2 | 146 kB   00:00
+aws_instance.TeraOS (remote-exec): (17/21): perl-Term |  31 kB   00:00
+aws_instance.TeraOS (remote-exec): (18/21): perl-Git- |  47 kB   00:00
+aws_instance.TeraOS (remote-exec): (19/21): php-5.4.1 | 1.4 MB   00:00
+aws_instance.TeraOS (remote-exec): (20/21): php-commo | 563 kB   00:00
+aws_instance.TeraOS (remote-exec): (21/21): php-cli-5 | 2.8 MB   00:00
+aws_instance.TeraOS (remote-exec): ----------------------------------------
+aws_instance.TeraOS (remote-exec): Total       35 MB/s |  14 MB  00:00
+aws_instance.TeraOS (remote-exec): Running transaction check
+aws_instance.TeraOS (remote-exec): Running transaction test
+aws_instance.TeraOS (remote-exec): Transaction test succeeded
+aws_instance.TeraOS (remote-exec): Running transaction
+aws_instance.TeraOS: Still creating... [41s elapsed]
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6 [        ]  1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6 [##      ]  1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6 [####    ]  1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6 [######  ]  1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6 [####### ]  1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-1.6.3-5.amzn    1/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [        ]  2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [##      ]  2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [####    ]  2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [######  ]  2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [####### ]  2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-util-1.6.1-5    2/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [        ]  3/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-uti [####### ]  3/21
+aws_instance.TeraOS (remote-exec):   Installing : apr-util-bdb-1.6    3/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [        ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [#       ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [##      ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [###     ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [####    ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [#####   ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [######  ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [####### ]  4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-core-2.23.3-    4/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [        ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [#       ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [##      ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [###     ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [####    ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [#####   ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [######  ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-cor [####### ]  5/21
+aws_instance.TeraOS (remote-exec):   Installing : git-core-doc-2.2    5/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [        ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [##      ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [###     ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [####    ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [#####   ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [######  ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-t [####### ]  6/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-tools-2.4.    6/21
+aws_instance.TeraOS (remote-exec):   Installing : generic [        ]  7/21
+aws_instance.TeraOS (remote-exec):   Installing : generic [######  ]  7/21
+aws_instance.TeraOS (remote-exec):   Installing : generic [####### ]  7/21
+aws_instance.TeraOS (remote-exec):   Installing : generic-logos-ht    7/21
+aws_instance.TeraOS (remote-exec):   Installing : mailcap [        ]  8/21
+aws_instance.TeraOS (remote-exec):   Installing : mailcap [######  ]  8/21
+aws_instance.TeraOS (remote-exec):   Installing : mailcap [####### ]  8/21
+aws_instance.TeraOS (remote-exec):   Installing : mailcap-2.1.41-2    8/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [        ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [#       ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [###     ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [####    ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [#####   ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [######  ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-f [####### ]  9/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-filesystem    9/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [        ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [#       ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [##      ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [####    ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [#####   ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [######  ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_htt [####### ] 10/21
+aws_instance.TeraOS (remote-exec):   Installing : mod_http2-1.15.3   10/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [        ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [#       ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [##      ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [###     ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [####    ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [#####   ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [######  ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2 [####### ] 11/21
+aws_instance.TeraOS (remote-exec):   Installing : httpd-2.4.43-1.a   11/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [        ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [#       ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [##      ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [###     ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [####    ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl- [####### ] 12/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:perl-Error-0.1   12/21
+aws_instance.TeraOS (remote-exec):   Installing : libzip0 [        ] 13/21
+aws_instance.TeraOS (remote-exec):   Installing : libzip0 [####### ] 13/21
+aws_instance.TeraOS (remote-exec):   Installing : libzip010-compat   13/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [        ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [#       ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [##      ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [###     ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [####    ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [#####   ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [######  ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-com [####### ] 14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-common-5.4.1   14/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [        ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [#       ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [##      ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [###     ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [####    ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [#####   ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [######  ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli [####### ] 15/21
+aws_instance.TeraOS (remote-exec):   Installing : php-cli-5.4.16-4   15/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Te [        ] 16/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Te [##      ] 16/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Te [######  ] 16/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Te [####### ] 16/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-TermReadKey   16/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [        ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [#       ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [##      ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [###     ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [####    ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [#####   ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [######  ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecr [####### ] 17/21
+aws_instance.TeraOS (remote-exec):   Installing : libsecret-0.18.5   17/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:emacs [        ] 18/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:emacs [#       ] 18/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:emacs [###     ] 18/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:emacs [######  ] 18/21
+aws_instance.TeraOS (remote-exec):   Installing : 1:emacs-filesyst   18/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Gi [        ] 19/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Gi [#       ] 19/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Gi [####### ] 19/21
+aws_instance.TeraOS (remote-exec):   Installing : perl-Git-2.23.3-   19/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [        ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [#       ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [##      ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [###     ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [####    ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [######  ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.2 [####### ] 20/21
+aws_instance.TeraOS (remote-exec):   Installing : git-2.23.3-1.amz   20/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [        ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [#       ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [##      ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [###     ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [####    ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [#####   ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [######  ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4 [####### ] 21/21
+aws_instance.TeraOS (remote-exec):   Installing : php-5.4.16-46.am   21/21
+aws_instance.TeraOS (remote-exec):   Verifying  : 1:emacs-filesyst    1/21
+aws_instance.TeraOS (remote-exec):   Verifying  : git-2.23.3-1.amz    2/21
+aws_instance.TeraOS (remote-exec):   Verifying  : apr-util-bdb-1.6    3/21
+aws_instance.TeraOS (remote-exec):   Verifying  : php-cli-5.4.16-4    4/21
+aws_instance.TeraOS (remote-exec):   Verifying  : libsecret-0.18.5    5/21
+aws_instance.TeraOS (remote-exec):   Verifying  : perl-TermReadKey    6/21
+aws_instance.TeraOS (remote-exec):   Verifying  : httpd-2.4.43-1.a    7/21
+aws_instance.TeraOS (remote-exec):   Verifying  : mod_http2-1.15.3    8/21
+aws_instance.TeraOS (remote-exec):   Verifying  : apr-1.6.3-5.amzn    9/21
+aws_instance.TeraOS (remote-exec):   Verifying  : php-5.4.16-46.am   10/21
+aws_instance.TeraOS (remote-exec):   Verifying  : libzip010-compat   11/21
+aws_instance.TeraOS (remote-exec):   Verifying  : git-core-2.23.3-   12/21
+aws_instance.TeraOS (remote-exec):   Verifying  : apr-util-1.6.1-5   13/21
+aws_instance.TeraOS (remote-exec):   Verifying  : 1:perl-Error-0.1   14/21
+aws_instance.TeraOS (remote-exec):   Verifying  : httpd-filesystem   15/21
+aws_instance.TeraOS (remote-exec):   Verifying  : mailcap-2.1.41-2   16/21
+aws_instance.TeraOS (remote-exec):   Verifying  : generic-logos-ht   17/21
+aws_instance.TeraOS (remote-exec):   Verifying  : php-common-5.4.1   18/21
+aws_instance.TeraOS (remote-exec):   Verifying  : perl-Git-2.23.3-   19/21
+aws_instance.TeraOS (remote-exec):   Verifying  : git-core-doc-2.2   20/21
+aws_instance.TeraOS (remote-exec):   Verifying  : httpd-tools-2.4.   21/21
+
+aws_instance.TeraOS (remote-exec): Installed:
+aws_instance.TeraOS (remote-exec):   git.x86_64 0:2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):   httpd.x86_64 0:2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):   php.x86_64 0:5.4.16-46.amzn2.0.2
+
+aws_instance.TeraOS (remote-exec): Dependency Installed:
+aws_instance.TeraOS (remote-exec):   apr.x86_64 0:1.6.3-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   apr-util.x86_64 0:1.6.1-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   apr-util-bdb.x86_64 0:1.6.1-5.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   emacs-filesystem.noarch 1:25.3-3.amzn2.0.1
+aws_instance.TeraOS (remote-exec):   generic-logos-httpd.noarch 0:18.0.0-4.amzn2
+aws_instance.TeraOS (remote-exec):   git-core.x86_64 0:2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):   git-core-doc.noarch 0:2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):   httpd-filesystem.noarch 0:2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):   httpd-tools.x86_64 0:2.4.43-1.amzn2
+aws_instance.TeraOS (remote-exec):   libsecret.x86_64 0:0.18.5-2.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   libzip010-compat.x86_64 0:0.10.1-9.amzn2.0.5
+aws_instance.TeraOS (remote-exec):   mailcap.noarch 0:2.1.41-2.amzn2
+aws_instance.TeraOS (remote-exec):   mod_http2.x86_64 0:1.15.3-2.amzn2
+aws_instance.TeraOS (remote-exec):   perl-Error.noarch 1:0.17020-2.amzn2
+aws_instance.TeraOS (remote-exec):   perl-Git.noarch 0:2.23.3-1.amzn2.0.1
+aws_instance.TeraOS (remote-exec):   perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   php-cli.x86_64 0:5.4.16-46.amzn2.0.2
+aws_instance.TeraOS (remote-exec):   php-common.x86_64 0:5.4.16-46.amzn2.0.2
+
+aws_instance.TeraOS (remote-exec): Complete!
+aws_instance.TeraOS: Creation complete after 45s [id=i-0ad935031000351dd]
+aws_volume_attachment.ebs_att: Creating...
+aws_volume_attachment.ebs_att: Still creating... [10s elapsed]
+aws_volume_attachment.ebs_att: Still creating... [20s elapsed]
+aws_volume_attachment.ebs_att: Still creating... [30s elapsed]
+aws_volume_attachment.ebs_att: Still creating... [40s elapsed]
+aws_volume_attachment.ebs_att: Creation complete after 48s [id=vai-1822193402]
+null_resource.null2: Creating...
+null_resource.null2: Provisioning with 'remote-exec'...
+null_resource.null2 (remote-exec): Connecting to remote host via SSH...
+null_resource.null2 (remote-exec):   Host: 13.233.61.75
+null_resource.null2 (remote-exec):   User: ec2-user
+null_resource.null2 (remote-exec):   Password: false
+null_resource.null2 (remote-exec):   Private key: true
+null_resource.null2 (remote-exec):   Certificate: false
+null_resource.null2 (remote-exec):   SSH Agent: false
+null_resource.null2 (remote-exec):   Checking Host Key: false
+null_resource.null2 (remote-exec): Connected!
+null_resource.null2 (remote-exec): mke2fs 1.42.9 (28-Dec-2013)
+null_resource.null2 (remote-exec): Filesystem label=
+null_resource.null2 (remote-exec): OS type: Linux
+null_resource.null2 (remote-exec): Block size=4096 (log=2)
+null_resource.null2 (remote-exec): Fragment size=4096 (log=2)
+null_resource.null2 (remote-exec): Stride=0 blocks, Stripe width=0 blocks
+null_resource.null2 (remote-exec): 65536 inodes, 262144 blocks
+null_resource.null2 (remote-exec): 13107 blocks (5.00%) reserved for the super user
+null_resource.null2 (remote-exec): First data block=0
+null_resource.null2 (remote-exec): Maximum filesystem blocks=268435456
+null_resource.null2 (remote-exec): 8 block groups
+null_resource.null2 (remote-exec): 32768 blocks per group, 32768 fragments per group
+null_resource.null2 (remote-exec): 8192 inodes per group
+null_resource.null2 (remote-exec): Superblock backups stored on blocks:
+null_resource.null2 (remote-exec):      32768, 98304, 163840, 229376
+
+null_resource.null2 (remote-exec): Allocating group tables: done
+null_resource.null2 (remote-exec): Writing inode tables: done
+null_resource.null2 (remote-exec): Creating journal (8192 blocks): done
+null_resource.null2 (remote-exec): Writing superblocks and filesystem accounting information: done
+
+null_resource.null2 (remote-exec): Cloning into '/var/www/html'...
+null_resource.null2 (remote-exec): remote: Enumerating objects: 8, done.
+null_resource.null2 (remote-exec): remote: Counting objects:  12% (1/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  25% (2/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  37% (3/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  50% (4/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  62% (5/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  75% (6/8)
+null_resource.null2 (remote-exec): remote: Counting objects:  87% (7/8)
+null_resource.null2 (remote-exec): remote: Counting objects: 100% (8/8)
+null_resource.null2 (remote-exec): remote: Counting objects: 100% (8/8), done.
+null_resource.null2 (remote-exec): remote: Compressing objects:  20% (1/5)
+null_resource.null2 (remote-exec): remote: Compressing objects:  40% (2/5)
+null_resource.null2 (remote-exec): remote: Compressing objects:  60% (3/5)
+null_resource.null2 (remote-exec): remote: Compressing objects:  80% (4/5)
+null_resource.null2 (remote-exec): remote: Compressing objects: 100% (5/5)
+null_resource.null2 (remote-exec): remote: Compressing objects: 100% (5/5), done.
+null_resource.null2 (remote-exec): remote: Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+null_resource.null2 (remote-exec): Unpacking objects:  12% (1/8)
+null_resource.null2 (remote-exec): Unpacking objects:  25% (2/8)
+null_resource.null2 (remote-exec): Unpacking objects:  37% (3/8)
+null_resource.null2 (remote-exec): Unpacking objects:  50% (4/8)
+null_resource.null2 (remote-exec): Unpacking objects:  62% (5/8)
+null_resource.null2 (remote-exec): Unpacking objects:  75% (6/8)
+null_resource.null2 (remote-exec): Unpacking objects:  87% (7/8)
+null_resource.null2 (remote-exec): Unpacking objects: 100% (8/8)
+null_resource.null2 (remote-exec): Unpacking objects: 100% (8/8), done.
+null_resource.null2: Creation complete after 3s [id=1444828086141116717]
+aws_s3_bucket.mybucket: Creating...
+aws_s3_bucket.mybucket: Provisioning with 'local-exec'...
+aws_s3_bucket.mybucket (local-exec): Executing: ["cmd" "/C" "git clone https://github.com/satyamskic/terra-image.git   terra-image"]
+aws_s3_bucket.mybucket (local-exec): Cloning into 'terra-image'...
+aws_s3_bucket.mybucket: Creation complete after 10s [id=satyam9625318589]
+aws_s3_bucket_object.image-upload: Creating...
+aws_cloudfront_distribution.s3_distribution: Creating...
+aws_s3_bucket_object.image-upload: Creation complete after 1s [id=nature.jpg]
+aws_cloudfront_distribution.s3_distribution: Still creating... [10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m0s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [1m50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m0s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still creating... [2m50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Creation complete after 2m57s [id=E3QEBCT5LCSKYE]
+null_resource.null3: Creating...
+null_resource.null3: Provisioning with 'remote-exec'...
+null_resource.null3 (remote-exec): Connecting to remote host via SSH...
+null_resource.null3 (remote-exec):   Host: 13.233.61.75
+null_resource.null3 (remote-exec):   User: ec2-user
+null_resource.null3 (remote-exec):   Password: false
+null_resource.null3 (remote-exec):   Private key: true
+null_resource.null3 (remote-exec):   Certificate: false
+null_resource.null3 (remote-exec):   SSH Agent: false
+null_resource.null3 (remote-exec):   Checking Host Key: false
+null_resource.null3 (remote-exec): Connected!
+null_resource.null3 (remote-exec): <img src='https://d3giqn88kxpi7k.cloudfront.net/nature.jpg' width='300' lenght='400' >
+null_resource.null3: Creation complete after 2s [id=496350362395930598]
+
+Apply complete! Resources: 11 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+out1 = d3giqn88kxpi7k.cloudfront.net
+out2 = 13.233.61.75
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Users\SATYAM KUMAR\Desktop\Terra>
+C:\Users\SATYAM KUMAR\Desktop\Terra>terraform destroy -auto-approve
+tls_private_key.key: Refreshing state... [id=792034504ed5b1fe7d545a8e91abbe9bdb21d20b]
+module.key_pair.aws_key_pair.this[0]: Refreshing state... [id=key123]
+aws_ebs_volume.EbsVol: Refreshing state... [id=vol-0f79a85e912888ca8]
+aws_security_group.mysg: Refreshing state... [id=sg-037d029095cd790d6]
+aws_instance.TeraOS: Refreshing state... [id=i-0ad935031000351dd]
+aws_volume_attachment.ebs_att: Refreshing state... [id=vai-1822193402]
+null_resource.null2: Refreshing state... [id=1444828086141116717]
+aws_s3_bucket.mybucket: Refreshing state... [id=satyam9625318589]
+aws_s3_bucket_object.image-upload: Refreshing state... [id=nature.jpg]
+aws_cloudfront_distribution.s3_distribution: Refreshing state... [id=E3QEBCT5LCSKYE]
+null_resource.null3: Refreshing state... [id=496350362395930598]
+null_resource.null3: Destroying... [id=496350362395930598]
+null_resource.null3: Destruction complete after 0s
+aws_s3_bucket_object.image-upload: Destroying... [id=nature.jpg]
+module.key_pair.aws_key_pair.this[0]: Destroying... [id=key123]
+aws_cloudfront_distribution.s3_distribution: Destroying... [id=E3QEBCT5LCSKYE]
+aws_s3_bucket_object.image-upload: Destruction complete after 0s
+module.key_pair.aws_key_pair.this[0]: Destruction complete after 0s
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m0s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 1m50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m0s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m40s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 2m50s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 3m0s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 3m10s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 3m20s elapsed]
+aws_cloudfront_distribution.s3_distribution: Still destroying... [id=E3QEBCT5LCSKYE, 3m30s elapsed]
+aws_cloudfront_distribution.s3_distribution: Destruction complete after 3m38s
+aws_s3_bucket.mybucket: Destroying... [id=satyam9625318589]
+aws_s3_bucket.mybucket: Provisioning with 'local-exec'...
+aws_s3_bucket.mybucket (local-exec): Executing: ["cmd" "/C" "echo Y | rmdir /s terra-image"]
+aws_s3_bucket.mybucket (local-exec): terra-image, Are you sure (Y/N)? Y
+aws_s3_bucket.mybucket: Destruction complete after 3s
+null_resource.null2: Destroying... [id=1444828086141116717]
+null_resource.null2: Destruction complete after 0s
+aws_volume_attachment.ebs_att: Destroying... [id=vai-1822193402]
+aws_volume_attachment.ebs_att: Still destroying... [id=vai-1822193402, 10s elapsed]
+aws_volume_attachment.ebs_att: Still destroying... [id=vai-1822193402, 20s elapsed]
+aws_volume_attachment.ebs_att: Still destroying... [id=vai-1822193402, 30s elapsed]
+aws_volume_attachment.ebs_att: Still destroying... [id=vai-1822193402, 40s elapsed]
+aws_volume_attachment.ebs_att: Destruction complete after 47s
+aws_ebs_volume.EbsVol: Destroying... [id=vol-0f79a85e912888ca8]
+aws_instance.TeraOS: Destroying... [id=i-0ad935031000351dd]
+aws_ebs_volume.EbsVol: Destruction complete after 3s
+aws_instance.TeraOS: Still destroying... [id=i-0ad935031000351dd, 10s elapsed]
+aws_instance.TeraOS: Still destroying... [id=i-0ad935031000351dd, 20s elapsed]
+aws_instance.TeraOS: Still destroying... [id=i-0ad935031000351dd, 30s elapsed]
+aws_instance.TeraOS: Still destroying... [id=i-0ad935031000351dd, 40s elapsed]
+aws_instance.TeraOS: Destruction complete after 50s
+tls_private_key.key: Destroying... [id=792034504ed5b1fe7d545a8e91abbe9bdb21d20b]
+aws_security_group.mysg: Destroying... [id=sg-037d029095cd790d6]
+tls_private_key.key: Destruction complete after 0s
+aws_security_group.mysg: Destruction complete after 1s
+
+Destroy complete! Resources: 11 destroyed.
+
+C:\Users\SATYAM KUMAR\Desktop\Terra>
+
+
+
